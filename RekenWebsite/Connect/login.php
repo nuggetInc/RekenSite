@@ -16,7 +16,7 @@ $array = Read($pdo, $name, $pass);
     else
     {
         $_SESSION["leerlingen"] = $array;
-        header("Location: ../groep.php");
+        header("Location: ../opgaven.php");
     }
 
 
