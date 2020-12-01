@@ -6,8 +6,7 @@ session_start();
 
 <head>
     <title>Document</title>
-    <link rel="stylesheet" href="CSS/IndexStyle.css">
-    <link rel="stylesheet" href="headerStyle.css">
+    <link rel="stylesheet" href="CSS/style.css">
     <link rel="stylesheet" href="CSS/opgavenStyle.css">
 </head>
 
