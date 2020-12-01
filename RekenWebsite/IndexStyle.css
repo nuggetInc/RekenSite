@@ -1,0 +1,94 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0px;
+}
+.top_header {
+    display: flex;
+    justify-content: space-between;
+    background-color:  rgb(0, 119, 255);
+    border-bottom: 1px black solid;
+    width: 100%;
+    height: 88px;
+}
+
+.left, .right {
+    padding: 18px;
+}
+.mid-text {
+    font-size: 1.5rem;
+    color: white;
+    -webkit-text-stroke: 1px black;
+    font-weight: 1000; 
+}
+
+.login {
+    position: relative;
+    background-color: rgb(0, 119, 255);
+    box-shadow: 10px 5px 5px black;
+    transform: translate(-50%, -50%);
+    height: 500px;
+    width: 400px;
+    top: 45vh;
+    left: 50%;
+    border-radius: 5%;
+    border: 2px black solid;
+}
+.h1-login {
+    position: relative;
+    color: white;
+    margin-bottom: -20px;
+    font-size: 3rem;
+    font-weight: 800;
+    -webkit-text-stroke: 1px black;
+    text-shadow: 2px 2px 5px black;
+    width: max-content;
+    transform: translate(-50%, -50%);
+    left: 50%;
+}
+
+.ww-div, .name-div {
+    position: relative;
+    transform: translate(-50%, -50%);
+    width: max-content;
+    height: max-content;
+    width: 90%;
+    top: 10%;
+    left: 10%;
+    left: 50%;
+}
+.ww-div {
+    margin-top: 40px;
+}
+
+input[type=text], input[type=password] {
+    box-shadow: 2px 2px 5px black; 
+    width: 100%;
+    height: 30px;
+}
+.Lwachtwoord, .Lnaam {
+    display: block;
+    font-size: 1.4rem;
+    color: white;
+    font-weight: 800;
+    -webkit-text-stroke: 0.5px black;
+    text-shadow: 2px 2px 5px black;
+}
+
+input[type=submit] {
+    font-size: 1.1rem;
+    font-weight: 800;
+    position: relative;
+    transform: translate(-50%, -50%);
+    border: 2px black solid;
+    left: 50%;
+    top: 30%;
+    width: 90%;
+    height: 30px;
+}
+input[type=submit]:hover {
+    background-color: rgb(212, 212, 212);
+}
+
+input[type=text]:hover ,input[type=password]:hover {
+    border: rgb(173, 173, 173) solid 2px;
+}
