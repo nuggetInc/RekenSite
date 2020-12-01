@@ -6,6 +6,7 @@ session_start();
 
 <head>
     <title>Document</title>
+    <link rel="stylesheet" href="CSS/IndexStyle.css">
     <link rel="stylesheet" href="CSS/style.css">
     <link rel="stylesheet" href="CSS/opgavenStyle.css">
 </head>
@@ -36,7 +37,7 @@ session_start();
     <div class="pageWrapper">
         <div class="item plus">
             <div class="title">
-                <h1>plus</h1>
+                <h1>PLUS</h1>
                 <h1>+</h1>
             </div>
             <hr>
@@ -44,7 +45,7 @@ session_start();
         </div>
         <div class="item min">
             <div class="title">
-                <h1>min</h1>
+                <h1>MIN</h1>
                 <h1>-</h1>
             </div>
             <hr>
@@ -52,15 +53,15 @@ session_start();
         </div>
         <div class="item keer">
             <div class="title">
-                <h1>keer</h1>
+                <h1>KEER</h1>
                 <h1>x</h1>
             </div>
             <hr>
-            <p>tot en met:<br>10, 100, 1000</p>
+            <p>de tafel van:<br>1, 2, 3, 4, 5, 6, 7, 8, 9, 10</p>
         </div>
         <div class="item delen">
             <div class="title">
-                <h1>delen</h1>
+                <h1>DELEN   </h1>
                 <h1>:</h1>
             </div>
             <hr>
