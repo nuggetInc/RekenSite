@@ -1,20 +1,39 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="nl">
 
 <head>
     <title>Document</title>
+    <link rel="stylesheet" href="CSS/IndexStyle.css">
     <link rel="stylesheet" href="headerStyle.css">
-    <link rel="stylesheet" href="./CSS/opgavenStyle.css">
+    <link rel="stylesheet" href="CSS/opgavenStyle.css">
 </head>
 
 <body>
-    <header id="pageheader">
-        <div class="header">
-            <img class="header" src="images/home.jpg">
-            <img class="header" src="images/back.png">
+<div class="top_header">
+        <div class="left">
+            <div class="left_content">
+                <a href="index.html"><img style="width: 50px; height: 50px;" src="IMG/HOME.png"></a>
+            </div>
         </div>
-        <img class="header" src="images/logo.png">
-    </header>
+        <div class="mid">
+            <div class="mid_content">
+                <p class="mid-text" style="margin-top: 18px;">
+                    <?php
+                    $array = $_SESSION["leerlingen"]; 
+                    echo $array[0];
+                    ?>
+                </p>
+            </div>
+        </div>
+        <div class="right">
+                <div class="right_content">
+                    <img style="width: 60px; height: 60px;" src="IMG/LOGO.png">
+            </div>
+        </div>
+    </div>
     <div class="pageWrapper">
         <div class="item plus">
             <div class="title">
