@@ -6,7 +6,7 @@ session_start();
 <html>
 <head>
     <script src="JS/home.js"></script>
-    <link rel="stylesheet" href="IndexStyle.css">
+    <link rel="stylesheet" href="CSS/IndexStyle.css">
     <title>Groep</title>
 </head>
 <body>
