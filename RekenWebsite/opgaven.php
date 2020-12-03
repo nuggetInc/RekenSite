@@ -6,12 +6,13 @@ session_start();
 
 <head>
     <title>Document</title>
+    <link rel="stylesheet" href="CSS/IndexStyle.css">
     <link rel="stylesheet" href="CSS/style.css">
     <link rel="stylesheet" href="CSS/opgavenStyle.css">
 </head>
 
 <body>
-<div class="top_header">
+    <div class="top_header">
         <div class="left">
             <div class="left_content">
                 <a href="index.html"><img style="width: 50px; height: 50px;" src="IMG/HOME.png"></a>
@@ -21,7 +22,7 @@ session_start();
             <div class="mid_content">
                 <p class="mid-text" style="margin-top: 18px;">
                     <?php
-                    $array = $_SESSION["leerlingen"]; 
+                    $array = $_SESSION["leerling"]; 
                     echo $array[0];
                     ?>
                 </p>
