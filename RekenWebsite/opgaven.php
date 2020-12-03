@@ -41,7 +41,15 @@ session_start();
                 <h1>+</h1>
             </div>
             <hr>
-            <p>tot en met:<br>10, 100, 1000</p>
+            <p>tot en met:</p>
+            <form action="plus.php">
+                <p>
+                    <input type="radio" id="10" class="select" name="plus" value="10"><label for="10">10, </label>
+                    <input type="radio" id="100" class="select"name="plus" value="100"><label for="100">100, </label>
+                    <input type="radio" id="1000" class="select"name="plus" value="1000"><label for="1000">1000</label>
+                </p>
+                <p class="submit"><input type="submit" name="submit"></p>
+            </form>
         </div>
         <div class="item min">
             <div class="title">
@@ -57,7 +65,9 @@ session_start();
                 <h1>x</h1>
             </div>
             <hr>
+            <form action="vragen.php">
             <p>de tafel van:<br>1, 2, 3, 4, 5, 6, 7, 8, 9, 10</p>
+        </form>
         </div>
         <div class="item delen">
             <div class="title">

@@ -58,3 +58,11 @@ body {
     font-size: 2rem;
     font-weight: bold;
 }
+
+.select {
+    display: none;
+}
+
+.submit {
+    top: 1000px;
+}
