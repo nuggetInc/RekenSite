@@ -37,15 +37,23 @@ session_start();
     <div class="pageWrapper">
         <div class="item plus">
             <div class="title">
-                <h1>plus</h1>
+                <h1>PLUS</h1>
                 <h1>+</h1>
             </div>
             <hr>
-            <p>tot en met:<br>10, 100, 1000</p>
+            <p>tot en met:</p>
+            <form action="plus.php">
+                <p>
+                    <input type="radio" id="10" class="select" name="plus" value="10"><label for="10">10, </label>
+                    <input type="radio" id="100" class="select"name="plus" value="100"><label for="100">100, </label>
+                    <input type="radio" id="1000" class="select"name="plus" value="1000"><label for="1000">1000</label>
+                </p>
+                <p class="submit"><input type="submit" name="submit"></p>
+            </form>
         </div>
         <div class="item min">
             <div class="title">
-                <h1>min</h1>
+                <h1>MIN</h1>
                 <h1>-</h1>
             </div>
             <hr>
@@ -53,15 +61,17 @@ session_start();
         </div>
         <div class="item keer">
             <div class="title">
-                <h1>keer</h1>
+                <h1>KEER</h1>
                 <h1>x</h1>
             </div>
             <hr>
-            <p>tot en met:<br>10, 100, 1000</p>
+            <form action="vragen.php">
+            <p>de tafel van:<br>1, 2, 3, 4, 5, 6, 7, 8, 9, 10</p>
+        </form>
         </div>
         <div class="item delen">
             <div class="title">
-                <h1>delen</h1>
+                <h1>DELEN   </h1>
                 <h1>:</h1>
             </div>
             <hr>
