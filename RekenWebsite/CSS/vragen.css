@@ -1,0 +1,15 @@
+.vragen-wrapper {
+    position: relative; 
+    background-color: rgb(0, 119, 255);
+    width: 40vw;
+    height: 40vh;
+    border-radius: 30px;
+    left: 50%;
+    top: 50vh;
+    transform: translate(-50%, -50%);
+}
+
+.vragen-wrapper h1 {
+    font-size: 7rem;
+    text-align: center;
+}
