@@ -44,11 +44,11 @@ session_start();
             <p>tot en met:</p>
             <form action="plus.php">
                 <p>
-                    <input type="radio" id="10" class="select" name="plus" value="10"><label for="10">10, </label>
-                    <input type="radio" id="100" class="select"name="plus" value="100"><label for="100">100, </label>
-                    <input type="radio" id="1000" class="select"name="plus" value="1000"><label for="1000">1000</label>
+                    <input type="radio" id="10plus" class="select" name="max" value="10"><label for="10plus">10, </label>
+                    <input type="radio" id="100plus" class="select"name="max" value="100"><label for="100plus">100, </label>
+                    <input type="radio" id="1000plus" class="select"name="max" value="1000"><label for="1000plus">1000</label>
                 </p>
-                <p class="submit"><input type="submit" name="submit"></p>
+                <p class="submit"><input type="submit"></p>
             </form>
         </div>
         <div class="item min">
@@ -57,7 +57,15 @@ session_start();
                 <h1>-</h1>
             </div>
             <hr>
-            <p>tot en met:<br>10, 100, 1000</p>
+            <p>tot en met:</p>
+            <form action="plus.php">
+                <p>
+                    <input type="radio" id="10min" class="select" name="max" value="10"><label for="10min">10, </label>
+                    <input type="radio" id="100min" class="select"name="max" value="100"><label for="100min">100, </label>
+                    <input type="radio" id="1000min" class="select"name="max" value="1000"><label for="1000min">1000</label>
+                </p>
+                <p class="submit"><input type="submit"></p>
+            </form>
         </div>
         <div class="item keer">
             <div class="title">
@@ -66,7 +74,15 @@ session_start();
             </div>
             <hr>
             <form action="vragen.php">
-            <p>de tafel van:<br>1, 2, 3, 4, 5, 6, 7, 8, 9, 10</p>
+            <p>de tafel van:</p>
+            <form action="plus.php">
+                <p>
+                    <input type="radio" id="1keer" class="select" name="max" value="1"><label for="1keer">1, </label>
+                    <input type="radio" id="2keer" class="select"name="max" value="2"><label for="2keer">2, </label>
+                    <input type="radio" id="3keer" class="select"name="max" value="3"><label for="3keer">3</label>
+                </p>
+                <p class="submit"><input type="submit"></p>
+            </form>
         </form>
         </div>
         <div class="item delen">

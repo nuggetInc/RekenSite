@@ -46,13 +46,19 @@ function Delete($pdo, $i)
     $sth = $pdo->prepare("DELETE FROM testTabel WHERE nummer=:nummer");
     $sth->execute($parameters);
 }
-
+//NOG NIET KLAAR!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+function AddCijfers($pdo, $plus, $min, $keer, $delen) 
+{
+    $parameters = array(':+'=>$plus,':-'=>$min, ':x'=>$keer, ':/'=>$delen);
+    $sth = $pdo->prepare("INSERT INTO leerlingen (Docent, Wachtwoord) VALUES (:Docent, :Wachtwoord)");
+    $sth->execute($parameters);
+}
 function FetchAllLeerlingen($pdo)
 {
         $sth = $pdo->prepare("SELECT * FROM leerlingen");
         $sth->execute();
-
         return $sth->fetchAll();
+
 }
 #region nutteloze functies
 //Omdat PHP geen console log functie heeft :(

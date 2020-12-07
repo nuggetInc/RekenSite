@@ -1,4 +1,5 @@
 <?php 
+require("Connect/crud.php");
 require("Connect/database.php");
 session_start();
 ?>
@@ -52,113 +53,21 @@ session_start();
             <td>2</td>
             <td>6</td>
         </tr>
-        <tr>
-            <td class="Naam">Dirk</td>
-            <td>6</td>
-            <td>7</td>
-            <td>2</td>
-            <td>6</td>
-        </tr>
-        <tr>
-            <td class="Naam">Dirk</td>
-            <td>6</td>
-            <td>7</td>
-            <td>2</td>
-            <td>6</td>
-        </tr>
-        <tr>
-            <td class="Naam">Dirk</td>
-            <td>6</td>
-            <td>7</td>
-            <td>2</td>
-            <td>6</td>
-        </tr>
-        <tr>
-            <td class="Naam">Dirk</td>
-            <td>6</td>
-            <td>7</td>
-            <td>2</td>
-            <td>6</td>
-        </tr>
-        <tr>
-            <td class="Naam">Dirk</td>
-            <td>6</td>
-            <td>7</td>
-            <td>2</td>
-            <td>6</td>
-        </tr>
-        <tr>
-            <td class="Naam">Dirk</td>
-            <td>6</td>
-            <td>7</td>
-            <td>2</td>
-            <td>6</td>
-        </tr>
-        <tr>
-            <td class="Naam">Dirk</td>
-            <td>6</td>
-            <td>7</td>
-            <td>2</td>
-            <td>6</td>
-        </tr>
-        <tr>
-            <td class="Naam">Dirk</td>
-            <td>6</td>
-            <td>7</td>
-            <td>2</td>
-            <td>6</td>
-        </tr>
-        <tr>
-            <td class="Naam">Dirk</td>
-            <td>6</td>
-            <td>7</td>
-            <td>2</td>
-            <td>6</td>
-        </tr>
-        <tr>
-            <td class="Naam">Dirk</td>
-            <td>6</td>
-            <td>7</td>
-            <td>2</td>
-            <td>6</td>
-        </tr>
-        <tr>
-            <td class="Naam">Dirk</td>
-            <td>6</td>
-            <td>7</td>
-            <td>2</td>
-            <td>6</td>
-        </tr>
-        <tr>
-            <td class="Naam">Dirk</td>
-            <td>6</td>
-            <td>7</td>
-            <td>2</td>
-            <td>6</td>
-        </tr>
-        <tr>
-            <td class="Naam">Dirk</td>
-            <td>6</td>
-            <td>7</td>
-            <td>2</td>
-            <td>6</td>
-        </tr>
-        <tr>
-            <td class="Naam">Dirk</td>
-            <td>6</td>
-            <td>7</td>
-            <td>2</td>
-            <td>6</td>
-        </tr>
-    </table>            
-
-
+        <!--NOG VERWIJDEREN-->  
     <?php
-        $parameters = array();
-        $sth = $pdo->prepare("SELECT * FROM leerlingen");
-        $sth->execute();
-        print_r($sth->fetchAll());
+        $array = FetchAllLeerlingen($pdo);
 
+        for($i = 0; $i < count($array); $i++)
+        {
+            echo "<tr>
+                <td class=Naam>". $array[$i][0] ."</td>
+                <td>". $array[$i][2] ."</td>
+                <td>". $array[$i][3] ."</td>
+                <td>". $array[$i][4] ."</td>
+                <td>". $array[$i][5] ."</td>
+                </tr>";
+        }
     ?>
+    </table>
 </body>
 </html>
