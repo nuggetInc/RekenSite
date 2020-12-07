@@ -2,6 +2,11 @@
 require("Connect/crud.php");
 require("Connect/database.php");
 session_start();
+$array = $_SESSION["docent"];
+if(!isset($array[0]))
+{
+    echo "<script>window.close();</script>";
+}
 ?>
 <!DOCTYPE html>
 <html=>
