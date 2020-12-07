@@ -43,6 +43,7 @@
     <div class="vragen-wrapper">
         <?php
             echo "<h1>".$opgaven[0][0].$opgaven["operator"].$opgaven[0][1]."</h1>";
+            
         ?>
     </div>
 </body>

@@ -16,7 +16,7 @@ else
 for ($i=0; $i < 10; $i++) {
     $num1 = rand(1, $max);
     $num2 = rand(1, $max);
-    $opgaven[$i] = Array($num1, $num2, $num1 + $num2);
+    $opgaven[$i] = Array($num1, $num2, $num1 + $num2, false);
 }
 
 $_SESSION["opgaven"] = $opgaven;
