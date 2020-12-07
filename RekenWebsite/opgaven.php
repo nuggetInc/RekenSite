@@ -53,7 +53,7 @@ session_start();
                     <input type="radio" id="100plus" class="select"name="max" value="100"><label for="100plus">100, </label>
                     <input type="radio" id="1000plus" class="select"name="max" value="1000"><label for="1000plus">1000</label>
                 </p>
-                <p class="submit"><input type="submit"></p>
+                <input class="submit" type="submit">
             </form>
         </div>
         <div class="item min">
@@ -69,7 +69,7 @@ session_start();
                     <input type="radio" id="100min" class="select"name="max" value="100"><label for="100min">100, </label>
                     <input type="radio" id="1000min" class="select"name="max" value="1000"><label for="1000min">1000</label>
                 </p>
-                <p class="submit"><input type="submit"></p>
+                <input class="submit" type="submit">
             </form>
         </div>
         <div class="item keer">
@@ -78,7 +78,6 @@ session_start();
                 <h1>x</h1>
             </div>
             <hr>
-            <form action="vragen.php">
             <p>de tafel van:</p>
             <form action="plus.php">
                 <p>
@@ -86,9 +85,8 @@ session_start();
                     <input type="radio" id="2keer" class="select"name="max" value="2"><label for="2keer">2, </label>
                     <input type="radio" id="3keer" class="select"name="max" value="3"><label for="3keer">3</label>
                 </p>
-                <p class="submit"><input type="submit"></p>
+                <input class="submit" type="submit">
             </form>
-        </form>
         </div>
         <div class="item delen">
             <div class="title">
