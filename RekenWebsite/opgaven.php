@@ -15,7 +15,7 @@ session_start();
     <div class="top_header">
         <div class="left">
             <div class="left_content">
-                <a href="index.html"><img style="width: 50px; height: 50px;" src="IMG/HOME.png"></a>
+                <a href="index.php"><img style="width: 50px; height: 50px;" src="IMG/HOME.png"></a>
             </div>
         </div>
         <div class="mid">

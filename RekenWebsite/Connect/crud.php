@@ -1,7 +1,7 @@
 
 <?php
 // lEERLINGEN
-function CreateLeerlingen($pdo, $i, $value)
+function CreateLeerling($pdo, $i, $value)
 {
     $parameters = array(':Naam'=>$i,':Wachtwoord'=>$value);
     $sth = $pdo->prepare("INSERT INTO leerlingen (Naam, Wachtwoord) VALUES (:Naam, :Wachtwoord)");
@@ -13,6 +13,21 @@ function CreateDocent($pdo, $i, $value)
     $parameters = array(':Docent'=>$i,':Wachtwoord'=>$value);
     $sth = $pdo->prepare("INSERT INTO docenten (Docent, Wachtwoord) VALUES (:Docent, :Wachtwoord)");
     $sth->execute($parameters);
+}
+// BEHEERDERS
+function CreateBeheerder($pdo, $i, $value)
+{
+    $parameters = array(':Naam'=>$i,':Wachtwoord'=>$value);
+    $sth = $pdo->prepare("INSERT INTO beheerders (Naam, Wachtwoord) VALUES (:Naam, :Wachtwoord)");
+    $sth->execute($parameters);
+}
+function ReadBeheerders($pdo, $i, $value)
+{
+    $parameters = array(':Naam'=>$i, ':Wachtwoord'=>$value);
+    $sth = $pdo->prepare("SELECT * FROM beheerders WHERE Naam = :Naam AND Wachtwoord = :Wachtwoord");
+    $sth->execute($parameters);
+
+    return $sth->fetch();
 }
 // lEERLINGEN
 function ReadLeerlingen($pdo, $i, $value)
@@ -32,7 +47,13 @@ function ReadDocenten($pdo, $i, $value)
 
     return $sth->fetch();
 }
-
+function DeleteDocent($pdo, $i, $value)
+{
+    $parameters = array(':Docent'=>$i, ':Wachtwoord'=>$value);
+    $sth = $pdo->prepare("DELETE FROM docenten WHERE Docent = :Docent AND Wachtwoord = :Wachtwoord");
+    $sth->execute($parameters);
+}
+// lEERLINGEN
 function UpdateLeerlingen($pdo, $i, $value)
 {
     $parameters = array(':nummer'=>$i,':naam'=>$value);
@@ -40,24 +61,25 @@ function UpdateLeerlingen($pdo, $i, $value)
     $sth->execute($parameters);
 }
 
-function Delete($pdo, $i)
+function DeleteLeerling($pdo, $i, $value)
 {
-    $parameters = array(':nummer'=>$i);
-    $sth = $pdo->prepare("DELETE FROM testTabel WHERE nummer=:nummer");
+    $parameters = array(':Naam'=>$i, ':Wachtwoord'=>$value);
+    $sth = $pdo->prepare("DELETE FROM leerlingen WHERE Naam = :Naam AND Wachtwoord = :Wachtwoord");
     $sth->execute($parameters);
 }
 //NOG NIET KLAAR!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 function AddCijfers($pdo, $plus, $min, $keer, $delen) 
 {
-    $parameters = array(':+'=>$plus,':-'=>$min, ':x'=>$keer, ':/'=>$delen);
-    $sth = $pdo->prepare("INSERT INTO leerlingen (Docent, Wachtwoord) VALUES (:Docent, :Wachtwoord)");
+    $parameters = array(':plus'=>$plus,':min'=>$min, ':keer'=>$keer, ':delen'=>$delen);
+    $sth = $pdo->prepare('INSERT INTO leerlingen (plus, min, keer, delen) VALUES (:plus, :min, :keer, :delen)');
     $sth->execute($parameters);
 }
-function FetchAllLeerlingen($pdo)
+function FetchAllLeerlingen($pdo, $i)
 {
-        $sth = $pdo->prepare("SELECT * FROM leerlingen");
-        $sth->execute();
-        return $sth->fetchAll();
+    $parameters = array(':Docent'=>$i);
+    $sth = $pdo->prepare("SELECT * FROM leerlingen WHERE Docent = :Docent");
+    $sth->execute($parameters);
+    return $sth->fetchAll();
 
 }
 #region nutteloze functies
