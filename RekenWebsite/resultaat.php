@@ -1,4 +1,7 @@
 <?php
+    require("Connect/crud.php");
+    require("Connect/database.php");
+
     session_start();
     $opgaven = $_SESSION["opgaven"];
 ?>
@@ -42,13 +45,10 @@
     </div>
     <div class="vragen-wrapper">
         <?php
-            echo "<h1>".$opgaven[$opgaven["position"]][0].$opgaven["operator"].$opgaven[$opgaven["position"]][1]."</h1>";
-            
+            $punt = max(1, $opgaven["punt"]);
+            echo "<h1>".$punt."</h1>";
+            IncreaseAvarage($pdo, $_SESSION["leerling"][0], $opgaven["operator"], $punt);
         ?>
-        <form action="vragenReview.php">
-            <input type="text" name="answer">
-            <input type="submit">
-        </form>
     </div>
 </body>
 

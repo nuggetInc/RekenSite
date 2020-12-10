@@ -22,8 +22,13 @@ session_start();
             <div class="mid_content">
                 <p class="mid-text" style="margin-top: 18px;">
                     <?php
-                    $array = $_SESSION["leerling"]; 
-                    echo $array[0];
+                    if (isset($_SESSION["leerling"])) {
+                        $array = $_SESSION["leerling"]; 
+                        echo $array[0];
+                    }
+                    else {
+                        echo "geen naam gevonden";
+                    }
                     ?>
                 </p>
             </div>
