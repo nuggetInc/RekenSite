@@ -5,6 +5,7 @@ body {
 /* header */
 .top_header {
     display: flex;
+    z-index: 1;
     top: 0;
     position: fixed;
     justify-content: space-between;
