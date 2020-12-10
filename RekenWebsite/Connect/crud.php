@@ -82,6 +82,31 @@ function FetchAllLeerlingen($pdo, $i)
     return $sth->fetchAll();
 
 }
+
+function IncreaseAvarage($pdo, $leerling, $affected, $score)
+{
+    switch($affected)
+    {
+        case "+":
+            $parameters = array(":Naam"=>$leerling, ':plus'=>$score);
+            $sth = $pdo->prepare("UPDATE leerlingen SET plus=:plus WHERE Naam=:Naam");
+        break;
+        case "-":
+            $parameters = array(":Naam"=>$leerling, ':min'=>$score);
+            $sth = $pdo->prepare("UPDATE leerlingen SET min=:min WHERE Naam=:Naam");
+        break;
+        case "*":
+            $parameters = array(":Naam"=>$leerling, ':keer'=>$score);
+            $sth = $pdo->prepare("UPDATE leerlingen SET keer=:keer WHERE Naam=:Naam");
+        break;
+        case "/":
+            $parameters = array(":Naam"=>$leerling, ':delen'=>$score);
+            $sth = $pdo->prepare("UPDATE leerlingen SET delen=:delen WHERE Naam=:Naam");
+        break;
+    }
+    
+    $sth->execute($parameters);
+}
 #region nutteloze functies
 //Omdat PHP geen console log functie heeft :(
 function ConsoleLog($message)
