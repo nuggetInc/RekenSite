@@ -43,12 +43,23 @@
     <div class="vragen-wrapper">
         <?php
             echo "<h1>".$opgaven[$opgaven["position"]][0].$opgaven["operator"].$opgaven[$opgaven["position"]][1]."</h1>";
-            
+            if ($_GET["answer"] == $opgaven[$opgaven["position"]][2]) {
+                $opgaven["punt"] += 1;
+                echo "CORRECT!!!";
+            }
+            else {
+                echo "INCORRECT!!!";
+            }
+            $opgaven["position"] += 1;
+            $_SESSION["opgaven"] = $opgaven;
+
+            if($opgaven["position"] >= 10) {
+                echo "<script> setTimeout(() => { window.location.replace(\"resultaat.php\")}, 1000);</script>";
+            }
+            else {
+                echo "<script> setTimeout(() => { window.location.replace(\"vragen.php\")}, 10);</script>";
+            }
         ?>
-        <form action="vragenReview.php">
-            <input type="text" name="answer">
-            <input type="submit">
-        </form>
     </div>
 </body>
 

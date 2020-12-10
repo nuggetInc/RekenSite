@@ -42,13 +42,8 @@
     </div>
     <div class="vragen-wrapper">
         <?php
-            echo "<h1>".$opgaven[$opgaven["position"]][0].$opgaven["operator"].$opgaven[$opgaven["position"]][1]."</h1>";
-            
+            echo max(1, $opgaven["punt"]);
         ?>
-        <form action="vragenReview.php">
-            <input type="text" name="answer">
-            <input type="submit">
-        </form>
     </div>
 </body>
 
