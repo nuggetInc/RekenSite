@@ -35,8 +35,8 @@
             </div>
         </div>
         <div class="right">
-                <div class="right_content">
-                    <img style="width: 60px; height: 60px;" src="IMG/LOGO.png">
+            <div class="right_content">
+                <img style="width: 60px; height: 60px;" src="IMG/LOGO.png">
             </div>
         </div>
     </div>

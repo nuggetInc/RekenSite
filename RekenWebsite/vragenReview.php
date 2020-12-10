@@ -44,6 +44,7 @@
         <?php
             echo "<h1>".$opgaven[$opgaven["position"]][0].$opgaven["operator"].$opgaven[$opgaven["position"]][1]."</h1>";
             if ($_GET["answer"] == $opgaven[$opgaven["position"]][2]) {
+                $opgaven["punt"] += 1;
                 echo "CORRECT!!!";
             }
             else {
@@ -51,6 +52,10 @@
             }
             $opgaven["position"] += 1;
             $_SESSION["opgaven"] = $opgaven;
+            if($opgaven["position"] > 10)
+            {
+                header("Location: vragen.php");
+            }
         ?>
     </div>
     <script>
