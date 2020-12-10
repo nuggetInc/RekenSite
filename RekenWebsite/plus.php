@@ -5,6 +5,7 @@ session_start();
 $opgaven = Array();
 
 $opgaven["operator"] = "+";
+$opgaven["position"] = 0;
 if (isset($_GET["max"]))
     $max = $_GET["max"];
 else

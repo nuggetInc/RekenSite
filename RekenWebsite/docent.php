@@ -28,8 +28,13 @@ if(!isset($array[0]))
             <div class="mid_content">
                 <p class="mid-text" style="margin-top: 18px;">
                     <?php
-                    $array = $_SESSION["docent"]; 
-                    echo $array[0];
+                    if (isset($_SESSION["leerlingen"])) {
+                        $array = $_SESSION["leerlingen"]; 
+                        echo $array[0];
+                    }
+                    else {
+                        echo "geen naam gevonden";
+                    }
                     ?>
                 </p>
             </div>
