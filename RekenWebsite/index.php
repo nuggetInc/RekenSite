@@ -1,3 +1,9 @@
+<?php
+session_start();
+if (isset($_SESSION["docent"])) { $_SESSION["docent"] = "";}
+if (isset($_SESSION["leerling"])) { $_SESSION["leerling"] = "";}
+
+?>
 <!DOCTYPE html>
 <html>
 
@@ -16,7 +22,7 @@
         </div>
         <div class="mid">
             <div class="mid_content">
-                <p class="mid-text" style="margin: 22px;">REKEN WEBSITE</p>
+                <p class="mid-text" style="margin: 22px;">REKENWEBSITE</p>
             </div>
         </div>
         <div class="right">
@@ -26,7 +32,7 @@
         </div>
     </div>
 
-    <form action="Connect/login.php" method="GET">
+    <form action="Connect/login.php" method="POST">
         <div class="login">
             <p class="h1-login">LOG IN</p>
             <div class="name-div">
@@ -37,7 +43,7 @@
             </div>
             <div class="ww-div">
                 <label class="Lwachtwoord">
-                    <P>wachtwoord</P>
+                    <P>Wachtwoord</P>
                 </label>
                 <input class="password" type="password" placeholder="Wachtwoord" name="Pass" required>
             </div>
@@ -47,7 +53,6 @@
 
 
     </form>
-
 
 
 </body>
