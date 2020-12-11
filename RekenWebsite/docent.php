@@ -53,7 +53,6 @@ session_start();
     <?php
         $docent = $_SESSION["docent"];
         $leerlingArray = FetchAllLeerlingen($pdo, $docent[0]);
-       
         
         $colorArrayPlus = array();
         $colorArrayPMin = array();
@@ -84,32 +83,44 @@ session_start();
                     </tr>";
             }
         } 
-        
     ?>
 
     </table>
-    <form action="Connect/leerlingVoegToe.php" method="post">
+    <form action="ActionBlocks/leerlingVoegToe.php" method="post">
         <div class="login" style="left: 62.5%; position: absolute;">
             <p class="h1-login" style="font-size: 2rem;">VOEG LEERLING TOE</p>
             <div class="name-div">
                 <label class="Lnaam">
                     <P>Naam</P>
-                </label>
-                <input class="name" type="text" placeholder="Naam" name="voegToeNaam" required>
+                </label> <?php
+                if(!isset($docent[0]))
+                {
+                }
+                else 
+                {
+                    echo "<input class=\"name\" type=\"text\" placeholder=\"Naam\" name=\"voegToeNaam\" required>";
+                }
+                ?>
             </div>
             <div class="ww-div">
                 <label class="Lwachtwoord">
-                    <P>wachtwoord</P>
+                    <P>Wachtwoord</P>
                 </label>
-
-
-                <input class="password" type="text" placeholder="Wachtwoord" name="voegToePass" required>
+                <?php
+                if(!isset($docent[0]))
+                {
+                }
+                else 
+                {
+                    echo "<input class=\"password\" type=\"text\" placeholder=\"Wachtwoord\" name=\"voegToePass\" required>";
+                }
+                ?>
             </div>
             <input type="submit">
         </div>
     </form>
 
-    <form action="Connect/leerlingVerwijder.php" method="post">
+    <form action="ActionBlocks/leerlingVerwijder.php" method="post">
         <div class="fixed-layer">
             <div class="login" style="left: 87.5%; position: absolute;">
                 <p class="h1-login" style="font-size: 1.9rem;">VERWIJDER LEERLING</p>
@@ -117,13 +128,29 @@ session_start();
                     <label class="Lnaam">
                         <P>Naam</P>
                     </label>
-                    <input class="name" type="text" placeholder="Naam" name="verwijderNaam" required>
+                    <?php
+                    if(!isset($docent[0]))
+                    {
+                    }
+                    else 
+                    {
+                        echo "<input class=\"name\" type=\"text\" placeholder=\"Naam\" name=\"verwijderNaam\" required>";
+                    }
+                    ?>
                 </div>
                 <div class="ww-div">
                     <label class="Lwachtwoord">
-                        <P>wachtwoord</P>
+                        <P>Wachtwoord</P>
                     </label>
-                    <input class="password" type="text" placeholder="Wachtwoord" name="verwijderPass" required>
+                    <?php
+                    if(!isset($docent[0]))
+                    {
+                    }
+                    else 
+                    {
+                        echo "<input class=\"password\" type=\"text\" placeholder=\"Wachtwoord\" name=\"verwijderPass\" required>";
+                    }
+                    ?>
                 </div>
                 <input type="submit">
             </div>

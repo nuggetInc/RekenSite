@@ -1,7 +1,7 @@
 <?php 
 
-require('crud.php');
-require('database.php');
+require('../Connect/crud.php');
+require('../Connect/database.php');
 
 $name = $_POST['verwijderNaam'];
 $pass = $_POST['verwijderPass'];
