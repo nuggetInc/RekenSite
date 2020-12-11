@@ -84,7 +84,7 @@ session_start();
                     </tr>";
             }
         } 
-        ConsoleLog($colorArray[0]); 
+        
     ?>
 
     </table>
