@@ -88,19 +88,43 @@ function IncreaseAvarage($pdo, $leerling, $affected, $score)
     switch($affected)
     {
         case "+":
-            $parameters = array(":Naam"=>$leerling, ':plus'=>$score);
+            $parameters = array(":Naam"=>$leerling);
+            $sth = $pdo->prepare("SELECT plus FROM leerlingen WHERE Naam = :Naam");
+            $sth->execute($parameters);
+            $currentScore = $sth->fetch();
+            
+            $newScore = ($score + $currentScore[0] * 4) / 5;
+            $parameters = array(":Naam"=>$leerling, ':plus'=>$newScore);
             $sth = $pdo->prepare("UPDATE leerlingen SET plus=:plus WHERE Naam=:Naam");
         break;
         case "-":
-            $parameters = array(":Naam"=>$leerling, ':min'=>$score);
+            $parameters = array(":Naam"=>$leerling);
+            $sth = $pdo->prepare("SELECT min FROM leerlingen WHERE Naam = :Naam");
+            $sth->execute($parameters);
+            $currentScore = $sth->fetch();
+            
+            $newScore = ($score + $currentScore[0] * 4) / 5;
+            $parameters = array(":Naam"=>$leerling, ':min'=>$newScore);
             $sth = $pdo->prepare("UPDATE leerlingen SET min=:min WHERE Naam=:Naam");
         break;
         case "*":
-            $parameters = array(":Naam"=>$leerling, ':keer'=>$score);
+            $parameters = array(":Naam"=>$leerling);
+            $sth = $pdo->prepare("SELECT keer FROM leerlingen WHERE Naam = :Naam");
+            $sth->execute($parameters);
+            $currentScore = $sth->fetch();
+            
+            $newScore = ($score + $currentScore[0] * 4) / 5;
+            $parameters = array(":Naam"=>$leerling, ':keer'=>$newScore);
             $sth = $pdo->prepare("UPDATE leerlingen SET keer=:keer WHERE Naam=:Naam");
         break;
         case "/":
-            $parameters = array(":Naam"=>$leerling, ':delen'=>$score);
+            $parameters = array(":Naam"=>$leerling);
+            $sth = $pdo->prepare("SELECT delen FROM leerlingen WHERE Naam = :Naam");
+            $sth->execute($parameters);
+            $currentScore = $sth->fetch();
+            
+            $newScore = ($score + $currentScore[0] * 4) / 5;
+            $parameters = array(":Naam"=>$leerling, ':delen'=>$newScore);
             $sth = $pdo->prepare("UPDATE leerlingen SET delen=:delen WHERE Naam=:Naam");
         break;
     }

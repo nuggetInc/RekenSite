@@ -47,7 +47,7 @@ session_start();
             </div>
             <hr>
             <p>tot en met:</p>
-            <form action="plus.php">
+            <form action="opgaven/plus.php">
                 <p>
                     <input type="radio" id="10plus" class="select" name="max" value="10"><label for="10plus">10, </label>
                     <input type="radio" id="100plus" class="select"name="max" value="100"><label for="100plus">100, </label>
@@ -63,7 +63,7 @@ session_start();
             </div>
             <hr>
             <p>tot en met:</p>
-            <form action="plus.php">
+            <form action="opgaven/min.php">
                 <p>
                     <input type="radio" id="10min" class="select" name="max" value="10"><label for="10min">10, </label>
                     <input type="radio" id="100min" class="select"name="max" value="100"><label for="100min">100, </label>
