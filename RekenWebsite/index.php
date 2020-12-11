@@ -49,12 +49,7 @@ if (isset($_SESSION["leerling"])) { $_SESSION["leerling"] = "";}
             </div>
             <input type="submit">
         </div>
-
-
-
     </form>
-
-
 </body>
 
 </html>

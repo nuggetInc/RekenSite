@@ -1,10 +1,10 @@
 
 <?php
 // lEERLINGEN
-function CreateLeerling($pdo, $i, $value)
+function CreateLeerling($pdo, $i, $value, $docent)
 {
-    $parameters = array(':Naam'=>$i,':Wachtwoord'=>$value);
-    $sth = $pdo->prepare("INSERT INTO leerlingen (Naam, Wachtwoord) VALUES (:Naam, :Wachtwoord)");
+    $parameters = array(':Naam'=>$i,':Wachtwoord'=>$value, ':Docent'=>$docent);
+    $sth = $pdo->prepare("INSERT INTO leerlingen (Naam, Wachtwoord, Docent) VALUES (:Naam, :Wachtwoord, :Docent)");
     $sth->execute($parameters);
 }
 // DOCENTEN

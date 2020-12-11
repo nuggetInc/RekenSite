@@ -32,7 +32,7 @@ $beheerder = $_SESSION["beheerder"];
         </div>
     </div>
 
-    <form action="Connect/leraarVoegToe.php" method="POST">
+    <form action="ActionBlocks/leraarVoegToe.php" method="POST">
         <div style="position: absolute; left: 38%;" class="login">
             <p style="font-size: 2.5rem;" class="h1-login">Voeg Leraar Toe</p>
             <div class="name-div">
@@ -51,7 +51,7 @@ $beheerder = $_SESSION["beheerder"];
         </div>
     </form>
 
-    <form action="Connect/leraarVerwijder.php" method="POST">
+    <form action="ActionBlocks/leraarVerwijder.php" method="POST">
         <div style="position: absolute; left: 62%;"class="login">
             <p style="font-size: 2.5rem;" class="h1-login">Verwijder Leraar</p>
             <div class="name-div">
