@@ -17,7 +17,7 @@ else
 
 for ($i=0; $i < 10; $i++) {
     $num1 = rand(1, 10);
-    $opgaven[$i] = Array($num1, $tafel, $num1 / $tafel, false);
+    $opgaven[$i] = Array($num1 * $tafel, $tafel, $num1, false);
 }
 
 $_SESSION["opgaven"] = $opgaven;

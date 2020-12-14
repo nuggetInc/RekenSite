@@ -102,21 +102,23 @@ session_start();
             </div>
             <hr>
             <p>tot en met:</p>
-            <form action="opgaven/delen.php">
-                <p>
-                    <input type="radio" id="1delen" class="select" name="tafel" value="1"><label for="1delen">1, </label>
-                    <input type="radio" id="2delen" class="select" name="tafel" value="2"><label for="2delen">2, </label>
-                    <input type="radio" id="3delen" class="select" name="tafel" value="3"><label for="3delen">3, </label>
-                    <input type="radio" id="4delen" class="select" name="tafel" value="4"><label for="4delen">4, </label>
-                    <input type="radio" id="5delen" class="select" name="tafel" value="5"><label for="5delen">5, </label>
-                    <input type="radio" id="6delen" class="select" name="tafel" value="6"><label for="6delen">6, </label>
-                    <input type="radio" id="7delen" class="select" name="tafel" value="7"><label for="7delen">7, </label>
-                    <input type="radio" id="8delen" class="select" name="tafel" value="8"><label for="8delen">8, </label>
-                    <input type="radio" id="9delen" class="select" name="tafel" value="9"><label for="9delen">9, </label>
-                    <input type="radio" id="14delen" class="select" name="tafel" value="10"><label for="10delen">10</label>
-                </p>
-                <input class="submit" type="submit">
-            </form>
+            <div class="form-wrapper">
+                <form action="opgaven/delen.php">
+                    <p>
+                        <input type="radio" id="1delen" class="select" name="tafel" value="1"><label for="1delen">1, </label>
+                        <input type="radio" id="2delen" class="select" name="tafel" value="2"><label for="2delen">2, </label>
+                        <input type="radio" id="3delen" class="select" name="tafel" value="3"><label for="3delen">3, </label>
+                        <input type="radio" id="4delen" class="select" name="tafel" value="4"><label for="4delen">4, </label>
+                        <input type="radio" id="5delen" class="select" name="tafel" value="5"><label for="5delen">5, </label>
+                        <input type="radio" id="6delen" class="select" name="tafel" value="6"><label for="6delen">6, </label>
+                        <input type="radio" id="7delen" class="select" name="tafel" value="7"><label for="7delen">7, </label>
+                        <input type="radio" id="8delen" class="select" name="tafel" value="8"><label for="8delen">8, </label>
+                        <input type="radio" id="9delen" class="select" name="tafel" value="9"><label for="9delen">9, </label>
+                        <input type="radio" id="14delen" class="select" name="tafel" value="10"><label for="10delen">10</label>
+                    </p>
+                    <input class="submit" type="submit">
+                </form>
+            </div>
         </div>
     </div>
 </body>
