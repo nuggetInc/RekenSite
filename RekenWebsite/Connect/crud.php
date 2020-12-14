@@ -38,6 +38,14 @@ function ReadLeerlingen($pdo, $i, $value)
 
     return $sth->fetch();
 }
+function ReadLeerlingenNoPass($pdo, $i)
+{
+    $parameters = array(':Naam'=>$i);
+    $sth = $pdo->prepare("SELECT * FROM leerlingen WHERE Naam = :Naam");
+    $sth->execute($parameters);
+
+    return $sth->fetch();
+}
 // DOCENTEN
 function ReadDocenten($pdo, $i, $value)
 {
@@ -67,7 +75,7 @@ function DeleteLeerling($pdo, $i, $value)
     $sth = $pdo->prepare("DELETE FROM leerlingen WHERE Naam = :Naam AND Wachtwoord = :Wachtwoord");
     $sth->execute($parameters);
 }
-//NOG NIET KLAAR!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+//Cijfers
 function AddCijfers($pdo, $plus, $min, $keer, $delen) 
 {
     $parameters = array(':plus'=>$plus,':min'=>$min, ':keer'=>$keer, ':delen'=>$delen);
@@ -131,7 +139,6 @@ function IncreaseAvarage($pdo, $leerling, $affected, $score)
     
     $sth->execute($parameters);
 }
-#region nutteloze functies
 //Omdat PHP geen console log functie heeft :(
 function ConsoleLog($message)
 {
@@ -143,5 +150,5 @@ function alert($message)
 {
     echo "<script type='text/javascript'>alert(' $message  ');</script>";
 }
-#endregion
+
 ?>
