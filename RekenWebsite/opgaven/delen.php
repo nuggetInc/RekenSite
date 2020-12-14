@@ -4,11 +4,11 @@ session_start();
 
 $opgaven = Array();
 
-$opgaven["operator"] = "-";
+$opgaven["operator"] = ":";
 $opgaven["position"] = 0;
 $opgaven["punt"] = 0;
-if (isset($_GET["max"]))
-    $max = $_GET["max"];
+if (isset($_GET["tafel"]))
+    $tafel = $_GET["tafel"];
 else
 {
     header("Location: ../opgaven.php");
@@ -16,9 +16,8 @@ else
 }
 
 for ($i=0; $i < 10; $i++) {
-    $num1 = rand(1, $max);
-    $num2 = rand(1, $num1);
-    $opgaven[$i] = Array($num1, $num2, $num1 - $num2, false);
+    $num1 = rand(1, 10);
+    $opgaven[$i] = Array($num1, $tafel, $num1 / $tafel, false);
 }
 
 $_SESSION["opgaven"] = $opgaven;

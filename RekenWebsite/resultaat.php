@@ -3,7 +3,12 @@
     require("Connect/database.php");
 
     session_start();
-    $opgaven = $_SESSION["opgaven"];
+    if (isset($_SESSION["opgaven"])) {
+        $opgaven = $_SESSION["opgaven"];
+    }
+    else {
+        header("Location: opgaven.php");
+    }
 ?>
 <!DOCTYPE html>
 <html lang="nl">
@@ -48,6 +53,7 @@
             $punt = max(1, $opgaven["punt"]);
             echo "<h1>".$punt."</h1>";
             IncreaseAvarage($pdo, $_SESSION["leerling"][0], $opgaven["operator"], $punt);
+            $_SESSION["opgaven"] = null;
         ?>
     </div>
 </body>

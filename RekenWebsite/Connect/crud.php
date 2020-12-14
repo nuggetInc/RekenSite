@@ -107,7 +107,7 @@ function IncreaseAvarage($pdo, $leerling, $affected, $score)
             $parameters = array(":Naam"=>$leerling, ':min'=>$newScore);
             $sth = $pdo->prepare("UPDATE leerlingen SET min=:min WHERE Naam=:Naam");
         break;
-        case "*":
+        case "x":
             $parameters = array(":Naam"=>$leerling);
             $sth = $pdo->prepare("SELECT keer FROM leerlingen WHERE Naam = :Naam");
             $sth->execute($parameters);
@@ -117,7 +117,7 @@ function IncreaseAvarage($pdo, $leerling, $affected, $score)
             $parameters = array(":Naam"=>$leerling, ':keer'=>$newScore);
             $sth = $pdo->prepare("UPDATE leerlingen SET keer=:keer WHERE Naam=:Naam");
         break;
-        case "/":
+        case ":":
             $parameters = array(":Naam"=>$leerling);
             $sth = $pdo->prepare("SELECT delen FROM leerlingen WHERE Naam = :Naam");
             $sth->execute($parameters);

@@ -79,22 +79,44 @@ session_start();
             </div>
             <hr>
             <p>de tafel van:</p>
-            <form action="plus.php">
+            <form action="opgaven/keer.php">
                 <p>
-                    <input type="radio" id="1keer" class="select" name="max" value="1"><label for="1keer">1, </label>
-                    <input type="radio" id="2keer" class="select"name="max" value="2"><label for="2keer">2, </label>
-                    <input type="radio" id="3keer" class="select"name="max" value="3"><label for="3keer">3</label>
+                    <input type="radio" id="1keer" class="select" name="tafel" value="1"><label for="1keer">1, </label>
+                    <input type="radio" id="2keer" class="select" name="tafel" value="2"><label for="2keer">2, </label>
+                    <input type="radio" id="3keer" class="select" name="tafel" value="3"><label for="3keer">3, </label>
+                    <input type="radio" id="4keer" class="select" name="tafel" value="4"><label for="4keer">4, </label>
+                    <input type="radio" id="5keer" class="select" name="tafel" value="5"><label for="5keer">5, </label>
+                    <input type="radio" id="6keer" class="select" name="tafel" value="6"><label for="6keer">6, </label>
+                    <input type="radio" id="7keer" class="select" name="tafel" value="7"><label for="7keer">7, </label>
+                    <input type="radio" id="8keer" class="select" name="tafel" value="8"><label for="8keer">8, </label>
+                    <input type="radio" id="9keer" class="select" name="tafel" value="9"><label for="9keer">9, </label>
+                    <input type="radio" id="10keer" class="select" name="tafel" value="10"><label for=10keer">10</label>
                 </p>
                 <input class="submit" type="submit">
             </form>
         </div>
         <div class="item delen">
             <div class="title">
-                <h1>DELEN   </h1>
+                <h1>DELEN</h1>
                 <h1>:</h1>
             </div>
             <hr>
-            <p>tot en met:<br>10, 100, 1000</p>
+            <p>tot en met:</p>
+            <form action="opgaven/delen.php">
+                <p>
+                    <input type="radio" id="1delen" class="select" name="tafel" value="1"><label for="1delen">1, </label>
+                    <input type="radio" id="2delen" class="select" name="tafel" value="2"><label for="2delen">2, </label>
+                    <input type="radio" id="3delen" class="select" name="tafel" value="3"><label for="3delen">3, </label>
+                    <input type="radio" id="4delen" class="select" name="tafel" value="4"><label for="4delen">4, </label>
+                    <input type="radio" id="5delen" class="select" name="tafel" value="5"><label for="5delen">5, </label>
+                    <input type="radio" id="6delen" class="select" name="tafel" value="6"><label for="6delen">6, </label>
+                    <input type="radio" id="7delen" class="select" name="tafel" value="7"><label for="7delen">7, </label>
+                    <input type="radio" id="8delen" class="select" name="tafel" value="8"><label for="8delen">8, </label>
+                    <input type="radio" id="9delen" class="select" name="tafel" value="9"><label for="9delen">9, </label>
+                    <input type="radio" id="14delen" class="select" name="tafel" value="10"><label for="10delen">10</label>
+                </p>
+                <input class="submit" type="submit">
+            </form>
         </div>
     </div>
 </body>
