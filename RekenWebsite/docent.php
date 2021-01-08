@@ -65,10 +65,10 @@ session_start();
         {
             for($j = 0; $j < count($leerlingArray); $j++)
             {
-                if ($leerlingArray[$j][3] >= 5) {$colorArrayPlus[$j] = "rgb(74, 160, 85)";} else if ($leerlingArray[$j][3] < 5) {$colorArrayPlus[$j] = "rgb(255, 66, 66)";}
-                if ($leerlingArray[$j][4] >= 5) {$colorArrayMin[$j] = "rgb(74, 160, 85)";} else if ($leerlingArray[$j][4] < 5) {$colorArrayMin[$j] = "rgb(255, 66, 66)";}
-                if ($leerlingArray[$j][5] >= 5) {$colorArrayKeer[$j] = "rgb(74, 160, 85)";} else if ($leerlingArray[$j][5] < 5) {$colorArrayKeer[$j] = "rgb(255, 66, 66)";}
-                if ($leerlingArray[$j][6] >= 5) {$colorArrayDelen[$j] = "rgb(74, 160, 85)";} else if ($leerlingArray[$j][6] < 5) {$colorArrayDelen[$j] = "rgb(255, 66, 66)";}
+                if ($leerlingArray[$j][3] > 5) {$colorArrayPlus[$j] = "rgb(74, 160, 85)";} else if ($leerlingArray[$j][3] <= 5) {$colorArrayPlus[$j] = "rgb(255, 66, 66)";}
+                if ($leerlingArray[$j][4] > 5) {$colorArrayMin[$j] = "rgb(74, 160, 85)";} else if ($leerlingArray[$j][4] <= 5) {$colorArrayMin[$j] = "rgb(255, 66, 66)";}
+                if ($leerlingArray[$j][5] > 5) {$colorArrayKeer[$j] = "rgb(74, 160, 85)";} else if ($leerlingArray[$j][5] <= 5) {$colorArrayKeer[$j] = "rgb(255, 66, 66)";}
+                if ($leerlingArray[$j][6] > 5) {$colorArrayDelen[$j] = "rgb(74, 160, 85)";} else if ($leerlingArray[$j][6] <= 5) {$colorArrayDelen[$j] = "rgb(255, 66, 66)";}
             }
             for($i = 0; $i < count($leerlingArray); $i++)
             {
