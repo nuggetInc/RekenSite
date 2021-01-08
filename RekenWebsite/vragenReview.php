@@ -16,15 +16,15 @@
     <div class="top_header">
         <div class="left">
             <div class="left_content">
-                <a href="index.php"><img style="width: 50px; height: 50px;" src="IMG/HOME.png"></a>
+            <a href="index.php"><img style="width: 50px; height: 50px;" src="IMG/HOME.png"></a>
             </div>
         </div>
         <div class="mid">
             <div class="mid_content">
                 <p class="mid-text" style="margin-top: 18px;">
                     <?php
-                    if (isset($_SESSION["leerling"])) {
-                        $array = $_SESSION["leerling"]; 
+                    if (isset($_SESSION["leerlingen"])) {
+                        $array = $_SESSION["leerlingen"]; 
                         echo $array[0];
                     }
                     else {
@@ -52,6 +52,7 @@
             }
             $opgaven["position"] += 1;
             $_SESSION["opgaven"] = $opgaven;
+<<<<<<< HEAD
 
             if($opgaven["position"] >= 10) {
                 echo "<script> setTimeout(() => { window.location.replace(\"resultaat.php\")}, 1000);</script>";
@@ -61,6 +62,19 @@
             }
         ?>
     </div>
+=======
+            if($opgaven["position"] > 10)
+            {
+                header("Location: vragen.php");
+            }
+        ?>
+    </div>
+    <script>
+        setTimeout(() => {
+            window.location.replace("vragen.php")
+        }, 1000);
+    </script>
+>>>>>>> DustVeer
 </body>
 
 </html>

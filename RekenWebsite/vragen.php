@@ -35,15 +35,15 @@
             </div>
         </div>
         <div class="right">
-                <div class="right_content">
-                    <img style="width: 60px; height: 60px;" src="IMG/LOGO.png">
+            <div class="right_content">
+                <img style="width: 60px; height: 60px;" src="IMG/LOGO.png">
             </div>
         </div>
     </div>
     <div class="vragen-wrapper">
         <?php
             echo "<h1>".$opgaven[$opgaven["position"]][0].$opgaven["operator"].$opgaven[$opgaven["position"]][1]."</h1>";
-            
+
         ?>
         <form action="vragenReview.php">
             <input type="text" name="answer">
