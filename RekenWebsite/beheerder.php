@@ -32,39 +32,20 @@ $beheerder = $_SESSION["beheerder"];
         </div>
     </div>
 
-    <form action="ActionBlocks/leraarVoegToe.php" method="POST">
-        <div style="position: absolute; left: 38%;" class="login">
-            <p style="font-size: 2.5rem;" class="h1-login">Voeg Leraar Toe</p>
+    <form action="ActionBlocks/leraarVerander.php" method="POST">
+        <div class="login">
+            <p style="font-size: 2.5rem;" class="h1-login">Verander Leraar</p>
             <div class="name-div">
                 <label class="Lnaam">
-                    <P>Naam</P>
+                    <P>Oude Leraar</P>
                 </label>
-                <input class="name" type="text" placeholder="Naam" name="voegToeNaam" required>
+                <input class="name" type="text" placeholder="Oud" name="OudeLeraar" required>
             </div>
             <div class="ww-div">
                 <label class="Lwachtwoord">
-                    <P>Wachtwoord</P>
+                    <P>Nieuwe Leraar</P>
                 </label>
-                <input class="password" type="password" placeholder="Wachtwoord" name="voegToePass" required>
-            </div>
-            <input type="submit">
-        </div>
-    </form>
-
-    <form action="ActionBlocks/leraarVerwijder.php" method="POST">
-        <div style="position: absolute; left: 62%;"class="login">
-            <p style="font-size: 2.5rem;" class="h1-login">Verwijder Leraar</p>
-            <div class="name-div">
-                <label class="Lnaam">
-                    <P>Naam</P>
-                </label>
-                <input class="name" type="text" placeholder="Naam" name="verwijderNaam" required>
-            </div>
-            <div class="ww-div">
-                <label class="Lwachtwoord">
-                    <P>Wachtwoord</P>
-                </label>
-                <input class="password" type="password" placeholder="Wachtwoord" name="verwijderPass" required>
+                <input class="password" type="text" placeholder="Nieuw" name="NieuweLeraar" required>
             </div>
             <input type="submit">
         </div>
