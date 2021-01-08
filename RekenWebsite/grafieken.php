@@ -1,12 +1,16 @@
 <?php 
 require('Connect/crud.php');
 require('Connect/database.php');
-$name = $_POST['name'];
+
 session_start();
+if (isset($_POST["name"])) {
+    $_SESSION["leerlingG"] =  $_POST["name"];
+}
 ?>
 <!DOCTYPE html>
 <html>
 <head>
+    <link rel="stylesheet" href="CSS/switch.css">
     <link rel="stylesheet" href="CSS/grafiekenStyle.css">
     <link rel="stylesheet" href="CSS/docentStyle.css">
     <link rel="stylesheet" href="CSS/IndexStyle.css">   
@@ -24,13 +28,13 @@ session_start();
         <div class="mid">
             <div class="mid_content">
                 <p class="mid-text" style="margin-top: 18px;">
-                    <?php echo($name);?>
+                    <?php echo($_SESSION["leerlingG"]);?>
                 </p>
             </div>
         </div>
         <div class="right">
-                <div class="right_content">
-                    <img style="width: 60px; height: 60px;" src="IMG/LOGO.png">
+            <div class="right_content">
+                <img style="width: 60px; height: 60px;" src="IMG/LOGO.png">
             </div>
         </div>
     </div>
@@ -72,20 +76,17 @@ session_start();
             echo "<div style=\"top: " . $gemiddledeplus * 10 . "%; left: 19.6%;\" class=\"gemiddelde\"></div>
             <div style=\"top: " . $gemiddledemin * 10 . "%; left: 19.6%;left: 40.4%;\" class=\"gemiddelde\"></div>
             <div style=\"top: " . $gemiddledekeer * 10 . "%; left: 19.6%;left: 61.2%;\" class=\"gemiddelde\"></div>
-            <div style=\"top: " . $gemiddlededelen * 10 . "%; left: 19.6%;left: 82.2%;\" class=\"gemiddelde\"></div>"
+            <div style=\"top: " . $gemiddlededelen * 10 . "%; left: 19.6%;left: 82%;\" class=\"gemiddelde\"></div>"
             
         ?>
-        
-
         <!-- Balken -->
         <?php 
-            $leerling = ReadLeerlingenNoPass($pdo, $name);
+            $leerling = ReadLeerlingenNoPass($pdo, $_SESSION["leerlingG"]);
             echo "<div style=\"height: " . $leerling[3] * 10 . "%; background-color: green;\" class=\"staaf\"></div>
             <div style=\"height: " . $leerling[4] * 10 . "%; background-color: yellow;\" class=\"staaf\"></div>
             <div style=\"height: " . $leerling[5] * 10 . "%; background-color: blue;\" class=\"staaf\"></div>
             <div style=\"height: " . $leerling[6] * 10 . "%; background-color: red;\" class=\"staaf\"></div>"
         ?>
-
     </div>
     <div class="xAs"></div>
     <div class="streepjesX"></div>
@@ -100,5 +101,130 @@ session_start();
     <p style="left: calc(12.5% + 10.4%);" class="somen">MIN</p>
     <p style="left: calc(11.1% + 22%);"  class="somen">KEER</p>
     <p style="left: calc(11.1% + 32.6%);"  class="somen">DELEN</p>
+
+    <form action="" method="POST">
+        <div style="position: absolute; margin-top: 10px; left: 75%; width: 40%; height: 75vh;" class="login">
+            <p class="h1-login">VERANDEREN</p>
+            <!--PLUS-->
+            <?php 
+            $leerlingArray = ReadLeerlingenNoPass($pdo, $_SESSION["leerlingG"]);
+            ?>
+            <?php
+                $number = $leerlingArray[7]; 
+                if (!isset($_POST["plus"]))
+                {
+                    if (isset($_POST["plusSlider"])) {$number = 10;}
+                }
+                else if (isset($_POST["plus"]))
+                {
+                    $number = $_POST["plus"];
+                }
+                if (!isset($_POST["plusSlider"]) && isset($_POST["plus"]))
+                {
+                    $leerlingArray[7] = 0;
+                    PlusSwitchOn($pdo, $_SESSION["leerlingG"], 0);
+                }
+                else if (isset($_POST["plusSlider"]))
+                {
+                    $leerlingArray[7] = 10;
+                    PlusSwitchOn($pdo, $_SESSION["leerlingG"], $number);
+                }
+                ?>
+            <div>
+                <div style="top: 100px" class="name-div">
+                    <label>
+                        <p class="plusL">Plus tot en met</p>
+                    </label>
+                    <label class="switch">
+                        <input type="checkbox" name="plusSlider" <?php if ($leerlingArray[7] > 0) { echo "checked";}; ?>>
+                        <span class="slider">
+                    </label>
+                    <?php 
+                        if ($leerlingArray[7] > 0)
+                        {
+                            echo "<input style=\"margin-right: 10px;\"value=\"" . $number . "\" type=\"text\" name=\"plus\">";
+                        }
+                        
+                    ?>
+                </div>
+            </div>
+            <!--MIN--> 
+            <?php
+                $number = $leerlingArray[8]; 
+                if (!isset($_POST["min"]))
+                {
+                    if (isset($_POST["minSlider"])) {$number = 10;}
+                }
+                else if (isset($_POST["min"]))
+                {
+                    $number = $_POST["min"];
+                }
+                if (!isset($_POST["minSlider"]) && isset($_POST["min"]))
+                {
+                    $leerlingArray[8] = 0;
+                    MinSwitchOn($pdo, $_SESSION["leerlingG"], 0);
+                }
+                else if (isset($_POST["minSlider"]))
+                {
+                    $leerlingArray[8] = 10;
+                    MinSwitchOn($pdo, $_SESSION["leerlingG"], $number);
+                }
+                ?>
+            <div>
+                <div style="top: 100px" class="name-div">
+                    <label>
+                        <p class="plusL">Min tot en met</p>
+                    </label>
+                    <label class="switch">
+                        <input type="checkbox" name="minSlider" <?php if ($leerlingArray[8] > 0) { echo "checked";}; ?>>
+                        <span class="slider">
+                    </label>
+                    <?php
+                        if ($leerlingArray[8] > 0) 
+                        {   
+                            echo "<input style=\"margin-right: 10px;\"value=\"" . $number . "\" type=\"text\" name=\"min\">"; 
+                        }
+                    ?>
+                </div>
+            </div>
+            <!--KEER-->
+            <div>
+                <div style="top: 100px" class="name-div">
+                    <label>
+                        <p class="plusL">Keer tot en met</p>
+                    </label>
+                    <label class="switch">
+                        <input type="checkbox" name="keerSlider" <?php if (isset($_POST["keerSlider"])) { echo "checked";}; ?>>
+                        <span class="slider">
+                    </label>
+                    <?php
+                        if (isset($_POST["keerSlider"])) 
+                        {   
+                            echo "<input style=\"margin-right: 10px;\" type=\"text\" name=\"keer\">"; 
+                        }
+                    ?>
+                </div>
+            </div>
+            <!--DELEN-->
+            <div>
+                <div style="top: 100px" class="name-div">
+                    <label>
+                        <p class="plusL">Delen tot en met</p>
+                    </label>
+                    <label class="switch">
+                        <input type="checkbox" name="delenSlider" <?php if (isset($_POST["delenSlider"])) { echo "checked";}; ?>>
+                        <span class="slider">
+                    </label>
+                    <?php
+                        if (isset($_POST["delenSlider"])) 
+                        {   
+                            echo "<input style=\"margin-right: 10px;\" type=\"text\" name=\"delen\">"; 
+                        }
+                    ?>
+                </div>
+            </div>
+            <input type="submit">
+        </div>
+    </form>
 </body>
 </html>

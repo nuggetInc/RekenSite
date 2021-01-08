@@ -1,4 +1,3 @@
-
 <?php
 // lEERLINGEN
 function CreateLeerling($pdo, $i, $value, $docent)
@@ -89,6 +88,18 @@ function FetchAllLeerlingen($pdo, $i)
     $sth->execute($parameters);
     return $sth->fetchAll();
 
+}
+function PlusSwitchOn($pdo, $i, $value)
+{
+    $parameters = array(':Naam'=>$i,':plus_tot'=>$value);
+    $sth = $pdo->prepare("UPDATE leerlingen SET plus_tot=:plus_tot WHERE Naam=:Naam");
+    $sth->execute($parameters);
+}
+function MinSwitchOn($pdo, $i, $value)
+{
+    $parameters = array(':Naam'=>$i,':min_tot'=>$value);
+    $sth = $pdo->prepare("UPDATE leerlingen SET min_tot=:min_tot WHERE Naam=:Naam");
+    $sth->execute($parameters);
 }
 
 function IncreaseAvarage($pdo, $leerling, $affected, $score)
