@@ -40,8 +40,8 @@ session_start();
         </div>
     </div> -->
     <header class="page-header">
-        <a href="/RekenSite/RekenWebsite/"><img src="IMG/HOME.png"></a>
-        <a href="/RekenSite/RekenWebsite/"><img src="IMG/back.png"></a>
+        <a href="RekenWebsite/index.php"><img src="IMG/HOME.png"></a>
+        <a href="/RekenSite/RekenWebsite/index.php"><img src="IMG/back.png"></a>
         <a href="/RekenSite/RekenWebsite/"><h1>
             <?php
                 if (isset($_SESSION["leerling"])) {
