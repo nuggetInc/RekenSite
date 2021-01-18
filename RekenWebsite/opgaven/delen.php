@@ -7,13 +7,7 @@ $opgaven = Array();
 $opgaven["operator"] = ":";
 $opgaven["position"] = 0;
 $opgaven["punt"] = 0;
-if (isset($_GET["tafel"]))
-    $tafel = $_GET["tafel"];
-else
-{
-    header("Location: ../opgaven.php");
-    return;
-}
+$tafel = $_SESSION["leerling"][10];
 
 for ($i=0; $i < 10; $i++) {
     $num1 = rand(1, 10);

@@ -40,9 +40,9 @@ session_start();
         </div>
     </div> -->
     <header class="page-header">
-        <a href="RekenWebsite/index.php"><img src="IMG/HOME.png"></a>
+        <a href="/RekenSite/RekenWebsite/index.php"><img src="IMG/HOME.png"></a>
         <a href="/RekenSite/RekenWebsite/index.php"><img src="IMG/back.png"></a>
-        <a href="/RekenSite/RekenWebsite/"><h1>
+        <a href="/RekenSite/RekenWebsite/index.php"><h1>
             <?php
                 if (isset($_SESSION["leerling"])) {
                     $array = $_SESSION["leerling"]; 
@@ -64,12 +64,10 @@ session_start();
                     <h1>+</h1>
                 </div>
                 <hr>
-                <p>tot en met:</p>
-                <p>
-                    <input type="radio" id="10plus" class="select" name="max" value="10"><label for="10plus">10, </label>
-                    <input type="radio" id="100plus" class="select"name="max" value="100"><label for="100plus">100, </label>
-                    <input type="radio" id="1000plus" class="select"name="max" value="1000"><label for="1000plus">1000</label>
-                </p>
+                <?php
+                    $tot = $_SESSION["leerling"][7];
+                    echo "<p>tot en met: $tot</p>";
+                ?>
                 <input class="submit" type="submit" value="verzenden">
             </form>
         </div>
@@ -80,12 +78,10 @@ session_start();
                     <h1>-</h1>
                 </div>
                 <hr>
-                <p>tot en met:</p>
-                <p>
-                    <input type="radio" id="10min" class="select" name="max" value="10"><label for="10min">10, </label>
-                    <input type="radio" id="100min" class="select"name="max" value="100"><label for="100min">100, </label>
-                    <input type="radio" id="1000min" class="select"name="max" value="1000"><label for="1000min">1000</label>
-                </p>
+                <?php
+                    $tot = $_SESSION["leerling"][8];
+                    echo "<p>tot en met: $tot</p>";
+                ?>
                 <input class="submit" type="submit" value="verzenden">
             </form>
         </div>
@@ -96,19 +92,14 @@ session_start();
                     <h1>x</h1>
                 </div>
                 <hr>
-                <p>de tafel van:</p>
-                <p>
-                    <input type="radio" id="1keer" class="select" name="tafel" value="1"><label for="1keer">1, </label>
-                    <input type="radio" id="2keer" class="select" name="tafel" value="2"><label for="2keer">2, </label>
-                    <input type="radio" id="3keer" class="select" name="tafel" value="3"><label for="3keer">3, </label>
-                    <input type="radio" id="4keer" class="select" name="tafel" value="4"><label for="4keer">4, </label>
-                    <input type="radio" id="5keer" class="select" name="tafel" value="5"><label for="5keer">5, </label>
-                    <input type="radio" id="6keer" class="select" name="tafel" value="6"><label for="6keer">6, </label>
-                    <input type="radio" id="7keer" class="select" name="tafel" value="7"><label for="7keer">7, </label>
-                    <input type="radio" id="8keer" class="select" name="tafel" value="8"><label for="8keer">8, </label>
-                    <input type="radio" id="9keer" class="select" name="tafel" value="9"><label for="9keer">9, </label>
-                    <input type="radio" id="10keer" class="select" name="tafel" value="10"><label for=10keer">10</label>
-                </p>
+                <?php
+                    $tot = $_SESSION["leerling"][9] * 10;
+                    if ($tot != 0){
+                        echo "<p>tafel 1 tot en met: $tot</p>";
+                    } else {
+                        echo "<p>je kunt hier geen tafels doen (niet op de knop hier onder klikken (het systeem zet die nog niet uit))</p>";
+                    }
+                ?>
                 <input class="submit" type="submit" value="verzenden">
             </form>
         </div>
@@ -119,19 +110,14 @@ session_start();
                     <h1>:</h1>
                 </div>
                 <hr>
-                <p>tot en met:</p>
-                <p>
-                    <input type="radio" id="1delen" class="select" name="tafel" value="1"><label for="1delen">1, </label>
-                    <input type="radio" id="2delen" class="select" name="tafel" value="2"><label for="2delen">2, </label>
-                    <input type="radio" id="3delen" class="select" name="tafel" value="3"><label for="3delen">3, </label>
-                    <input type="radio" id="4delen" class="select" name="tafel" value="4"><label for="4delen">4, </label>
-                    <input type="radio" id="5delen" class="select" name="tafel" value="5"><label for="5delen">5, </label>
-                    <input type="radio" id="6delen" class="select" name="tafel" value="6"><label for="6delen">6, </label>
-                    <input type="radio" id="7delen" class="select" name="tafel" value="7"><label for="7delen">7, </label>
-                    <input type="radio" id="8delen" class="select" name="tafel" value="8"><label for="8delen">8, </label>
-                    <input type="radio" id="9delen" class="select" name="tafel" value="9"><label for="9delen">9, </label>
-                    <input type="radio" id="14delen" class="select" name="tafel" value="10"><label for="10delen">10</label>
-                </p>
+                <?php
+                    $tot = $_SESSION["leerling"][10] * 10;
+                    if ($tot != 0){
+                        echo "<p>tafel 1 tot en met: $tot</p>";
+                    } else {
+                        echo "<p>je kunt hier geen tafels doen (niet op de knop hier onder klikken (het systeem zet die nog niet uit))</p>";
+                    }
+                ?>
                 <input class="submit" type="submit" value="verzenden">
             </form>
         </div>

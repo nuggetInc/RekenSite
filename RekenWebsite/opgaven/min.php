@@ -7,13 +7,7 @@ $opgaven = Array();
 $opgaven["operator"] = "-";
 $opgaven["position"] = 0;
 $opgaven["punt"] = 0;
-if (isset($_GET["max"]))
-    $max = $_GET["max"];
-else
-{
-    header("Location: ../opgaven.php");
-    return;
-}
+$max = $_SESSION["leerling"][8];
 
 for ($i=0; $i < 10; $i++) {
     $num1 = rand(1, $max);

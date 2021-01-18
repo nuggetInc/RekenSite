@@ -16,10 +16,10 @@ if (isset($_SESSION["leerling"])) { $_SESSION["leerling"] = "";}
 
 <body>
     <header class="page-header">
-        <a href="index.php"><img src="IMG/HOME.png"></a>
-        <a href="index.php"><img src="IMG/back.png"></a>
-        <a href="index.php"><h1>RekenWebsite</h1></a>
-        <a href="index.php"><img src="IMG/LOGO.png"></a>
+        <a href="/RekenSite/RekenWebsite/"><img src="IMG/HOME.png"></a>
+        <a href="/RekenSite/RekenWebsite/"><img src="IMG/back.png"></a>
+        <a href="/RekenSite/RekenWebsite/"><h1>RekenWebsite</h1></a>
+        <a href="/RekenSite/RekenWebsite/"><img src="IMG/LOGO.png"></a>
     </header>
 
     <form class="login" action="Connect/login.php" method="POST">
