@@ -101,7 +101,7 @@ if (isset($_POST["name"])) {
     <p style="left: calc(12.5% + 10.4%);" class="somen">MIN</p>
     <p style="left: calc(11.1% + 22%);"  class="somen">KEER</p>
     <p style="left: calc(11.1% + 32.6%);"  class="somen">DELEN</p>
-
+    
     <form action="" method="POST">
         <div style="position: absolute; margin-top: 10px; left: 75%; width: 40%; height: 75vh;" class="login">
             <p class="h1-login">VERANDEREN</p>
@@ -133,16 +133,16 @@ if (isset($_POST["name"])) {
             <div>
                 <div style="top: 100px" class="name-div">
                     <label>
-                        <p class="plusL">Plus tot en met</p>
+                        <p style="position: relative;" class="plusL">Plus tot en met</p>
                     </label>
                     <label class="switch">
-                        <input type="checkbox" name="plusSlider" <?php if ($leerlingArray[7] > 0) { echo "checked";}; ?>>
+                        <input style="position: relative;" type="checkbox" name="plusSlider" <?php if ($leerlingArray[7] > 0) { echo "checked";}; ?>>
                         <span class="slider">
                     </label>
                     <?php 
                         if ($leerlingArray[7] > 0)
                         {
-                            echo "<input style=\"margin-right: 10px;\"value=\"" . $number . "\" type=\"text\" name=\"plus\">";
+                            echo "<input style=\"margin-bottom: -10px; margin-right: 10px;\"value=\"" . $number . "\" type=\"text\" name=\"plus\">";
                         }
                         
                     ?>
@@ -173,54 +173,87 @@ if (isset($_POST["name"])) {
             <div>
                 <div style="top: 100px" class="name-div">
                     <label>
-                        <p class="plusL">Min tot en met</p>
+                        <p <?php if (isset($_POST["minSlider"])) {echo "style=\"margin-top: 17px;\"";} ?> class="plusL">Min tot en met</p>
                     </label>
                     <label class="switch">
-                        <input type="checkbox" name="minSlider" <?php if ($leerlingArray[8] > 0) { echo "checked";}; ?>>
+                        <input style="position: relative;" type="checkbox" name="minSlider" <?php if ($leerlingArray[8] > 0) { echo "checked";}; ?>>
                         <span class="slider">
                     </label>
                     <?php
                         if ($leerlingArray[8] > 0) 
                         {   
-                            echo "<input style=\"margin-right: 10px;\"value=\"" . $number . "\" type=\"text\" name=\"min\">"; 
+                            echo "<input style=\"margin-bottom: -10px; margin-right: 10px; top:\"value=\"" . $number . "\" type=\"text\" name=\"min\">"; 
                         }
                     ?>
                 </div>
             </div>
             <!--KEER-->
             <div>
+                <?php
+                    if (isset($_POST["keerBoxUit"]))
+                    {
+                        $leerlingArray[9] = 0;
+                        KeerTotEnMet($pdo, $_SESSION["leerlingG"], 0);
+                    }
+                    else if (isset($_POST["keerBox10"]))
+                    {
+                        $leerlingArray[9] = 1;
+                        KeerTotEnMet($pdo, $_SESSION["leerlingG"], 1);
+                    }
+                    else if (isset($_POST["keerBox20"]))
+                    {
+                        $leerlingArray[9] = 2;
+                        KeerTotEnMet($pdo, $_SESSION["leerlingG"], 2);
+                    }
+                ?>
                 <div style="top: 100px" class="name-div">
                     <label>
                         <p class="plusL">Keer tot en met</p>
                     </label>
-                    <label class="switch">
-                        <input type="checkbox" name="keerSlider" <?php if (isset($_POST["keerSlider"])) { echo "checked";}; ?>>
-                        <span class="slider">
-                    </label>
-                    <?php
-                        if (isset($_POST["keerSlider"])) 
-                        {   
-                            echo "<input style=\"margin-right: 10px;\" type=\"text\" name=\"keer\">"; 
-                        }
-                    ?>
+                    <div class="Boxes">
+                        <label><p style="font-size: 1rem;" class="plusL">Uit:</p></label>
+                            <input class="checkBoxUit" class="" name="keerBoxUit" type="checkbox" <?php if ($leerlingArray[9] == 0) {echo "checked";}  ?>>
+                        <label><p style="font-size: 1rem;" class="plusL">10:</p></label>
+                            <input class="checkBox10" class="" name="keerBox10" type="checkbox"<?php if ($leerlingArray[9] == 1) {echo "checked";} ?>>
+                        <label><p style="font-size: 1rem;" class="plusL">20:</p></label>
+                            <input class="checkBox20" class="" name="keerBox20" type="checkbox"<?php if ($leerlingArray[9] == 2) {echo "checked";}  ?>> 
+                    </div>
+                     
                 </div>
             </div>
             <!--DELEN-->
             <div>
+                <?php
+                    if (isset($_POST["delenBoxUit"]))
+                    {
+                        $leerlingArray[10] = 0;
+                        DelenTotEnMet($pdo, $_SESSION["leerlingG"], 0);
+                    }
+                    else if (isset($_POST["delenBox10"]))
+                    {
+                        $leerlingArray[10] = 1;
+                        DelenTotEnMet($pdo, $_SESSION["leerlingG"], 1);
+                    }
+                    else if (isset($_POST["delenBox20"]))
+                    {
+                        $leerlingArray[10] = 2;
+                        DelenTotEnMet($pdo, $_SESSION["leerlingG"], 2);
+                    }
+                ?>
                 <div style="top: 100px" class="name-div">
                     <label>
                         <p class="plusL">Delen tot en met</p>
                     </label>
-                    <label class="switch">
-                        <input type="checkbox" name="delenSlider" <?php if (isset($_POST["delenSlider"])) { echo "checked";}; ?>>
-                        <span class="slider">
-                    </label>
-                    <?php
-                        if (isset($_POST["delenSlider"])) 
-                        {   
-                            echo "<input style=\"margin-right: 10px;\" type=\"text\" name=\"delen\">"; 
-                        }
-                    ?>
+                    <div class="Boxes">
+                    <div class="Boxes">
+                        <label><p style="font-size: 1rem;" class="plusL">Uit:</p></label>
+                        <input class="checkBoxUit" class="" name="delenBoxUit" type="checkbox" <?php if ($leerlingArray[10] == 0) {echo "checked";}  ?>>
+                        <label><p style="font-size: 1rem;" class="plusL">10:</p></label>
+                        <input class="checkBox10" class="" name="delenBox10" type="checkbox" <?php if ($leerlingArray[10] == 1) {echo "checked";}  ?>>
+                        <label><p style="font-size: 1rem;" class="plusL">20:</p></label>
+                        <input class="checkBox20" class="" name="delenBox20" type="checkbox" <?php if ($leerlingArray[10] == 2) {echo "checked";}  ?>> 
+                    </div>
+                    </div>
                 </div>
             </div>
             <input type="submit">

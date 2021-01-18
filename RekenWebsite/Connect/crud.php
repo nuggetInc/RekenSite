@@ -101,6 +101,18 @@ function MinSwitchOn($pdo, $i, $value)
     $sth = $pdo->prepare("UPDATE leerlingen SET min_tot=:min_tot WHERE Naam=:Naam");
     $sth->execute($parameters);
 }
+function KeerTotEnMet($pdo, $i, $value)
+{
+    $parameters = array(':Naam'=>$i,':keer_tot'=>$value);
+    $sth = $pdo->prepare("UPDATE leerlingen SET keer_tot=:keer_tot WHERE Naam=:Naam");
+    $sth->execute($parameters);
+}
+function DelenTotEnMet($pdo, $i, $value)
+{
+    $parameters = array(':Naam'=>$i,':delen_tot'=>$value);
+    $sth = $pdo->prepare("UPDATE leerlingen SET delen_tot=:delen_tot WHERE Naam=:Naam");
+    $sth->execute($parameters);
+}
 
 function IncreaseAvarage($pdo, $leerling, $affected, $score)
 {
@@ -157,7 +169,7 @@ function ConsoleLog($message)
     'console.log(\'' . $message  .  '\');</script>';
 }
 //Omdat PHP geen altert heeft :(
-function alert($message)
+function Alert($message)
 {
     echo "<script type='text/javascript'>alert(' $message  ');</script>";
 }
