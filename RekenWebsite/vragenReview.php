@@ -52,8 +52,7 @@
             }
             $opgaven["position"] += 1;
             $_SESSION["opgaven"] = $opgaven;
-<<<<<<< HEAD
-
+            
             if($opgaven["position"] >= 10) {
                 echo "<script> setTimeout(() => { window.location.replace(\"resultaat.php\")}, 1000);</script>";
             }
@@ -62,19 +61,6 @@
             }
         ?>
     </div>
-=======
-            if($opgaven["position"] > 10)
-            {
-                header("Location: vragen.php");
-            }
-        ?>
-    </div>
-    <script>
-        setTimeout(() => {
-            window.location.replace("vragen.php")
-        }, 1000);
-    </script>
->>>>>>> DustVeer
 </body>
 
 </html>

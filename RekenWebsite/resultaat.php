@@ -31,8 +31,8 @@
             <div class="mid_content">
                 <p class="mid-text" style="margin-top: 18px;">
                     <?php
-                    if (isset($_SESSION["leerling"])) {
-                        $array = $_SESSION["leerling"]; 
+                    if (isset($_SESSION["leerlingen"])) {
+                        $array = $_SESSION["leerlingen"]; 
                         echo $array[0];
                     }
                     else {
